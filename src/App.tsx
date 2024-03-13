@@ -2,15 +2,29 @@ import { useState } from 'react'
 import './App.css'
 import Header from './components/Header'
 import Product from './pages/Product'
+import thumbnailImg from './assets/thumbnail.png'
+import { Routes, Route, Outlet, Link } from 'react-router-dom'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function Layout() {
   return (
     <>
-    <Header title='WEBROAD'/>
-    <Product title='Complete Web Development Bundle' description='This is a complete web development bundle that includes everything you need to learn to become a professional web developer.' images={[{src: 'https://via.placeholder.com/150', alt: 'A book'}]} price={12.99} />
+      <h1>Layout</h1>
+      <Header title='WEBROAD'/>
+      <Outlet />
     </>
+  )
+}
+
+function App() {
+
+  return (
+    <Routes>
+      <Route path='/' element={<Layout/>}>
+        <Route index path='/' element={ <Product title='Complete Web Development Bundle' description='This is a complete web  development bundle that includes everything you need to learn to become a professional web developer.' images={[{src: thumbnailImg, alt: 'A book'}]} price={12.99} />}/>
+      </Route>
+      <Route path='checkout' element={<div>Checkout</div>}/>
+      <Route path='success' element={<div>Success</div>}/>
+    </Routes>
   )
 }
 
