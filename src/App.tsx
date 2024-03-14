@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Product from './pages/Product'
 import thumbnailImg from './assets/thumbnail.png'
 import { Routes, Route, Outlet, Link } from 'react-router-dom'
+import Checkout from './pages/Checkout'
 
 function Layout() {
   return (
@@ -22,7 +23,7 @@ function App() {
       <Route path='/' element={<Layout/>}>
         <Route index path='/' element={ <Product title='Complete Web Development Bundle' description='This is a complete web  development bundle that includes everything you need to learn to become a professional web developer.' images={[{src: thumbnailImg, alt: 'A book'}]} price={12.99} />}/>
       </Route>
-      <Route path='checkout' element={<div>Checkout</div>}/>
+      <Route path='checkout' element={<Checkout />}/>
       <Route path='success' element={<div>Success</div>}/>
     </Routes>
   )
