@@ -6,7 +6,12 @@ export default {
       ...theme("colors"),
       DEFAULT: theme("colors.gray.900", "currentColor")
     }),
-    extend: {},
+    extend: {
+      boxShadow: {
+        custom:
+          "0px 1px 1px rgba(0, 0, 0, 0.03), 0px 3px 6px rbga(0, 0, 0, 0.02)"
+      }
+    },
     container: {
       center: true,
       screens: {
