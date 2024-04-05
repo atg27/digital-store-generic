@@ -38,8 +38,8 @@ export const CheckoutForm = () => {
       body: JSON.stringify({
         currency: 'usd',  
         email: emailInput,
-        amout: PRODUCT.price * 100,
-        paymetMethodType: 'card',
+        amount: PRODUCT.price * 100,
+        paymentMethodType: 'card',
       }),
     });
 
